@@ -96,6 +96,6 @@ void DetallesGraficos::despedida(){
     _escribirSlow("                    GRACIAS POR UTILIZAR EL");
     hacerEspacio();
     _escribirSlow(" SISTEMA DE REGISTROS DE CONFIRMACIONES - Guillermo Gigeroa");
-    Sleep(3000);
+    Sleep(2300);
 }
 
