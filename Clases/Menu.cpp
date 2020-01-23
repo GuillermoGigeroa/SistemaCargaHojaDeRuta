@@ -4,6 +4,8 @@
 #include "Util.h"
 #include <iostream>
 #include <cstdlib>
+#include <stdio.h>
+#include <conio.h>
 
 using namespace std;
 
@@ -11,96 +13,651 @@ void Menu::MenuPrincipal(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
                          HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
                          HojaDeRuta &hr72, HojaDeRuta &hr73)
 {
+    /*
+    op=getch();
+    printf("%i\n",op);
+    return 0;
+
+    72: Flecha arriba
+    75: Flecha izquierda
+    77: Flecha derecha
+    80: Flecha abajo
+    27: Tecla Escape
+    13: Tecla Enter
+    */
     DetallesGraficos d;
-    char opc[20];
-    opc[0] = '1', opc[1] = '\0';
-    while (opc[0] != '\0' && opc[1] == '\0')
+    int op = 0, seleccion = 1;
+    d.limpiarConsola();
+    cout<<" _______________________________________ "<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"| Sistema de registro de confirmaciones |"<<endl;
+    cout<<"|_______________________________________|"<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"|        Seleccione una opcion:         |"<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"|    --> Confirmacion de camiones       |"<<endl;
+    cout<<"|        Activar camiones               |"<<endl;
+    cout<<"|        Marcar hojas de ruta           |"<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"|        Confirmar todos                |"<<endl;
+    cout<<"|        Desconfirmar todos             |"<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"|        Activar todos                  |"<<endl;
+    cout<<"|        Desactivar todos               |"<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"|        Marcar todo                    |"<<endl;
+    cout<<"|        Desmarcar todo                 |"<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"|        Ver camiones disponibles       |"<<endl;
+    cout<<"|                                       |"<<endl;
+    cout<<"|        Salir                          |"<<endl;
+    cout<<"|_______________________________________|"<<endl;
+    do
     {
-        d.limpiarConsola();
-        cout<<" _______________________________________ "<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"| Sistema de registro de confirmaciones |"<<endl;
-        cout<<"|_______________________________________|"<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"|        Seleccione una opcion:         |"<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"|      1) Confirmacion de camiones      |"<<endl;
-        cout<<"|      2) Activar camiones              |"<<endl;
-        cout<<"|      3) Marcar hojas de ruta          |"<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"|      4) Confirmar todos               |"<<endl;
-        cout<<"|      5) Desconfirmar todos            |"<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"|      6) Activar todos                 |"<<endl;
-        cout<<"|      7) Desactivar todos              |"<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"|      8) Marcar todo                   |"<<endl;
-        cout<<"|      9) Desmarcar todo                |"<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"|      0) Ver camiones disponibles      |"<<endl;
-        cout<<"|                                       |"<<endl;
-        cout<<"|      S) Salir                         |"<<endl;
-        cout<<"|_______________________________________|"<<endl;
-        cout<<endl<<"Ingrese la opcion: ";
-        cin>>opc;
-        cin.ignore();
-        d.limpiarConsola();
-        switch (opc[0])
+        op=getch();
+        if(op == 72)///Arriba
         {
-        case '1':
+            if(seleccion == 1)
+                seleccion = 11;
+            else
+                seleccion--;
+        }
+        if(op == 80)///Abajo
+        {
+            if(seleccion == 11)
+                seleccion = 1;
+            else
+                seleccion++;
+        }
+        switch (seleccion)
+        {
+        case 1:
             {
-                MenuConfirmar(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    MenuConfirmar(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '2':
+        case 2:
             {
-                MenuActivar(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|    --> Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    MenuActivar(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|    --> Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '3':
+        case 3:
             {
-                MenuMarcar(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|    --> Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    MenuMarcar(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|    --> Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '4':
+        case 4:
             {
-                ConfirmarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    ConfirmarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '5':
+        case 5:
             {
-                DesconfirmarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|    --> Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    DesconfirmarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|    --> Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '6':
+        case 6:
             {
-                ActivarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    ActivarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '7':
+        case 7:
             {
-                DesactivarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|    --> Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    DesactivarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|    --> Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '8':
+        case 8:
             {
-                MarcarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    MarcarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '9':
+        case 9:
             {
-                DesmarcarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|    --> Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    DesmarcarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|    --> Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case '0':
+        case 10:
             {
-                VerCamionesDisponibles(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    VerCamionesDisponibles(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
             }break;
-        case 's':
-        case 'S':
+        case 11:
             {
-                return;
+                d.limpiarConsola();
+                cout<<" _______________________________________ "<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"| Sistema de registro de confirmaciones |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Seleccione una opcion:         |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmacion de camiones       |"<<endl;
+                cout<<"|        Activar camiones               |"<<endl;
+                cout<<"|        Marcar hojas de ruta           |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Confirmar todos                |"<<endl;
+                cout<<"|        Desconfirmar todos             |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Activar todos                  |"<<endl;
+                cout<<"|        Desactivar todos               |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Marcar todo                    |"<<endl;
+                cout<<"|        Desmarcar todo                 |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|        Ver camiones disponibles       |"<<endl;
+                cout<<"|                                       |"<<endl;
+                cout<<"|    --> Salir                          |"<<endl;
+                cout<<"|_______________________________________|"<<endl;
+                if(op==13)
+                    return;
             }break;
         default:
-            {
-                cout<<"Opcion incorrecta..."<<endl;
-                opc[0] = '\0', opc[1] = '\0';
-                cin.get();
-            }break;
+            {}break;
         }
     }
+    while (op != 174126541);
 }
+
 void Menu::MenuConfirmar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
                          HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
                          HojaDeRuta &hr72, HojaDeRuta &hr73)
@@ -460,42 +1017,40 @@ void Menu::MenuActivar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoj
     }
 }
 
-bool Menu::ConfirmarHR(HojaDeRuta &estaHR)
+void Menu::ConfirmarHR(HojaDeRuta &estaHR)
 {
     if(estaHR.GetDesactivado())
     {
         cout<<"Camion "<<estaHR.GetNumero()<<" desactivado. Por favor, para utilizarlo,"<<endl;
         cout<<"activelo desde el menu \"Activar camion\"."<<endl;
         cin.get();
-        return false;
+        return;
     }
     if(estaHR.GetConfirmado())
     {
         cout<<"Camion "<<estaHR.GetNumero()<<" ya ha sido confirmado previamente."<<endl;
         cin.get();
-        return false;
+        return;
     }
     estaHR.Confirmar();
-    return true;
 }
 
-bool Menu::DesconfirmarHR(HojaDeRuta &estaHR)
+void Menu::DesconfirmarHR(HojaDeRuta &estaHR)
 {
     if(estaHR.GetDesactivado())
     {
         cout<<"Camion "<<estaHR.GetNumero()<<" desactivado. Por favor, para utilizarlo,"<<endl;
         cout<<"activelo desde el menu \"Activar camion\"."<<endl;
         cin.get();
-        return false;
+        return;
     }
     if(!estaHR.GetConfirmado())
     {
         cout<<"Camion "<<estaHR.GetNumero()<<" ya ha sido desconfirmado previamente."<<endl;
         cin.get();
-        return false;
+        return;
     }
     estaHR.Desconfirmar();
-    return true;
 }
 
 void Menu::ActivarHR(HojaDeRuta &estaHR)
@@ -582,6 +1137,9 @@ void Menu::ActivarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoj
     hr23.Activar();hr25.Activar();hr40.Activar();hr41.Activar();hr43.Activar();
     hr47.Activar();hr51.Activar();hr52.Activar();hr55.Activar();hr56.Activar();
     hr61.Activar();hr71.Activar();hr72.Activar();hr73.Activar();
+    cout<<"Se activaron todos los camiones"<<endl;
+    cout<<"Presione enter para continar..."<<endl;
+    cin.get();
 }
 
 void Menu::DesactivarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
@@ -591,6 +1149,9 @@ void Menu::DesactivarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, 
     hr23.Desactivar();hr25.Desactivar();hr40.Desactivar();hr41.Desactivar();hr43.Desactivar();
     hr47.Desactivar();hr51.Desactivar();hr52.Desactivar();hr55.Desactivar();hr56.Desactivar();
     hr61.Desactivar();hr71.Desactivar();hr72.Desactivar();hr73.Desactivar();
+    cout<<"Se desactivaron todos los camiones"<<endl;
+    cout<<"Presione enter para continar..."<<endl;
+    cin.get();
 }
 
 void Menu::ConfirmarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
@@ -601,6 +1162,8 @@ void Menu::ConfirmarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
     hr43.Confirmar();hr47.Confirmar();hr51.Confirmar();hr52.Confirmar();
     hr55.Confirmar();hr56.Confirmar();hr61.Confirmar();hr71.Confirmar();
     hr72.Confirmar();hr73.Confirmar();
+    cout<<"Se confirmaron todos los camiones"<<endl;
+    cout<<"Presione enter para continar..."<<endl;    cin.get();
 }
 
 void Menu::DesconfirmarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
@@ -611,6 +1174,9 @@ void Menu::DesconfirmarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40
     hr43.Desconfirmar();hr47.Desconfirmar();hr51.Desconfirmar();hr52.Desconfirmar();
     hr55.Desconfirmar();hr56.Desconfirmar();hr61.Desconfirmar();hr71.Desconfirmar();
     hr72.Desconfirmar();hr73.Desconfirmar();
+    cout<<"Se desconfirmaron todos los camiones"<<endl;
+    cout<<"Presione enter para continar..."<<endl;
+    cin.get();
 }
 
 void Menu::MarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
@@ -621,6 +1187,9 @@ void Menu::MarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoja
     hr43.Marcar();hr47.Marcar();hr51.Marcar();hr52.Marcar();
     hr55.Marcar();hr56.Marcar();hr61.Marcar();hr71.Marcar();
     hr72.Marcar();hr73.Marcar();
+    cout<<"Se marcaron todos los camiones"<<endl;
+    cout<<"Presione enter para continar..."<<endl;
+    cin.get();
 }
 
 void Menu::DesmarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
@@ -631,6 +1200,9 @@ void Menu::DesmarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
     hr43.Desmarcar();hr47.Desmarcar();hr51.Desmarcar();hr52.Desmarcar();
     hr55.Desmarcar();hr56.Desmarcar();hr61.Desmarcar();hr71.Desmarcar();
     hr72.Desmarcar();hr73.Desmarcar();
+    cout<<"Se desmarcaron todos los camiones"<<endl;
+    cout<<"Presione enter para continar..."<<endl;
+    cin.get();
 }
 
 void Menu::VerCamionesDisponibles(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
@@ -831,4 +1403,3 @@ void Menu::MenuMarcar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoja
         }
     }
 }
-
