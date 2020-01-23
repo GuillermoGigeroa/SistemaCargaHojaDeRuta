@@ -12,8 +12,6 @@ public:
     void _escribirSlow(char *esteTexto);
     void presentacion();
     void despedida();
-    void animacionGuardando();
-    void animacionCargando();
 };
 
 #endif // DETALLESGRAFICOS_H

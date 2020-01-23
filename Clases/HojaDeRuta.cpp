@@ -4,5 +4,6 @@ HojaDeRuta::HojaDeRuta(unsigned short int num)
 {
     Activar();
     Desconfirmar();
+    Desmarcar();
     SetNumero(num);
 }

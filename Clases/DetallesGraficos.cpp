@@ -66,7 +66,7 @@ void DetallesGraficos::presentacion(){
     _escribirSlow("                        BIENVENIDO AL");
     hacerEspacio();
     _escribirSlow(" SISTEMA DE REGISTROS DE CONFIRMACIONES - Guillermo Gigeroa");
-    cin.get();
+    Sleep(2300);
     limpiarConsola();
 }
 
@@ -96,25 +96,6 @@ void DetallesGraficos::despedida(){
     _escribirSlow("                    GRACIAS POR UTILIZAR EL");
     hacerEspacio();
     _escribirSlow(" SISTEMA DE REGISTROS DE CONFIRMACIONES - Guillermo Gigeroa");
-    cin.get();
+    Sleep(3000);
 }
 
-void DetallesGraficos::animacionGuardando()
-{
-    for(int i = 0; i <= 100; i++)
-    {
-        limpiarConsola();
-        cout<<"Guardando datos: "<<i<<"%"<<endl;
-        Sleep(5);
-    }
-}
-
-void DetallesGraficos::animacionCargando()
-{
-    for(int i = 0; i <= 100; i++)
-    {
-        limpiarConsola();
-        cout<<"Cargando datos: "<<i<<"%"<<endl;
-        Sleep(5);
-    }
-}

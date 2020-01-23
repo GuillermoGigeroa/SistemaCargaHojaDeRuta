@@ -20,12 +20,17 @@ class Menu
         void MenuDesactivar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
                             HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
                             HojaDeRuta &hr72, HojaDeRuta &hr73);
+        void MenuMarcar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
+                            HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
+                            HojaDeRuta &hr72, HojaDeRuta &hr73);
         bool ConfirmarHR(HojaDeRuta &estaHR);
         bool DesconfirmarHR(HojaDeRuta &estaHR);
         void ActivarHR(HojaDeRuta &estaHR);
         void DesactivarHR(HojaDeRuta &estaHR);
         void EscribirCamion(HojaDeRuta &estaHR);
+        void EscribirCamionLista(HojaDeRuta &estaHR);
         void EscribirCamionActivar(HojaDeRuta &estaHR);
+        void EscribirMarcado(HojaDeRuta &estaHR);
         void ActivarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
                          HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
                          HojaDeRuta &hr72, HojaDeRuta &hr73);
@@ -41,6 +46,12 @@ class Menu
         void VerCamionesDisponibles(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
                             HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
                             HojaDeRuta &hr72, HojaDeRuta &hr73);
+        void MarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
+                         HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
+                         HojaDeRuta &hr72, HojaDeRuta &hr73);
+        void DesmarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
+                         HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
+                         HojaDeRuta &hr72, HojaDeRuta &hr73);
 };
 
 #endif // MENU_H

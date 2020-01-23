@@ -10,17 +10,18 @@ class HojaDeRuta
         unsigned short int GetNumero() { return numero; }
         void SetNumero(int val) { numero = val; }
         bool GetDesactivado() { return desactivado; }
-        void SetDesactivado(bool val) { desactivado = val; }
+        bool GetMarcado() { return marcado; }
 
         void Activar(){desactivado = false;}
         void Desactivar(){desactivado = true;}
         void Confirmar(){confirmado = true;}
         void Desconfirmar(){confirmado = false;}
+        void Marcar(){marcado = true;}
+        void Desmarcar(){marcado = false;}
 
     private:
-        bool confirmado;
+        bool confirmado, desactivado, marcado;
         unsigned short int numero;
-        bool desactivado;
 };
 
 #endif // HOJADERUTA_H

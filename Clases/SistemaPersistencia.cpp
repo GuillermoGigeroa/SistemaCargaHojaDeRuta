@@ -10,7 +10,6 @@ bool SistemaPersistencia::Cargar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta 
                                  HojaDeRuta &hr72, HojaDeRuta &hr73)
 {
     DetallesGraficos d;
-    d.animacionCargando();
     FILE *p;
     p = fopen(ARCHIVO,"rb");
     if(p == NULL) return false;
@@ -30,7 +29,6 @@ bool SistemaPersistencia::Guardar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta
                                   HojaDeRuta &hr72, HojaDeRuta &hr73)
 {
     DetallesGraficos d;
-    d.animacionGuardando();
     FILE *p;
     p = fopen(ARCHIVO,"wb");
     if(p == NULL) return false;

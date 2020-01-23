@@ -35,6 +35,9 @@ void Menu::MenuPrincipal(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
         d.escribirSlow("|      H) Desactivar todos              |");
         d.escribirSlow("|                                       |");
         d.escribirSlow("|      I) Ver camiones disponibles      |");
+        d.escribirSlow("|      J) Marcar hojas de ruta          |");
+        d.escribirSlow("|      K) Marcar todo                   |");
+        d.escribirSlow("|      L) Desmarcar todo                |");
         d.escribirSlow("|                                       |");
         d.escribirSlow("|      S) Salir                         |");
         d.escribirSlow("|_______________________________________|");
@@ -88,6 +91,21 @@ void Menu::MenuPrincipal(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
         case 'I':
             {
                 VerCamionesDisponibles(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+            }break;
+        case 'j':
+        case 'J':
+            {
+                MenuMarcar(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+            }break;
+        case 'k':
+        case 'K':
+            {
+                MarcarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
+            }break;
+        case 'l':
+        case 'L':
+            {
+                DesmarcarTodo(hr23, hr25, hr40, hr41, hr43, hr47, hr51, hr52, hr55, hr56, hr61, hr71, hr72, hr73);
             }break;
         case 's':
         case 'S':
@@ -160,73 +178,72 @@ void Menu::MenuConfirmar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
         {
         case 23:
             {
-                if(!ConfirmarHR(hr23))
-                    return;
+                ConfirmarHR(hr23);
+                camion = -1;
             }break;
         case 25:
             {
-                if(!ConfirmarHR(hr25))
-                    return;
+                ConfirmarHR(hr25);
+                camion = -1;
             }break;
         case 40:
             {
-                if(!ConfirmarHR(hr40))
-                    return;
+                ConfirmarHR(hr40);
+                camion = -1;
             }break;
         case 41:
             {
-                if(!ConfirmarHR(hr41))
-                    return;
+                ConfirmarHR(hr41);
+                camion = -1;
             }break;
         case 43:
             {
-                if(!ConfirmarHR(hr43))
-                    return;
+                ConfirmarHR(hr43);
+                camion = -1;
             }break;
         case 47:
             {
-                if(!ConfirmarHR(hr47))
-                    return;
+                ConfirmarHR(hr47);
+                camion = -1;
             }break;
         case 51:
             {
-                if(!ConfirmarHR(hr51))
-                    return;
+                ConfirmarHR(hr51);
+                camion = -1;
             }break;
         case 52:
             {
-                if(!ConfirmarHR(hr52))
-                    return;
+                ConfirmarHR(hr52);
+                camion = -1;
             }break;
         case 55:
             {
-                if(!ConfirmarHR(hr55))
-                    return;
+                ConfirmarHR(hr55);
+                camion = -1;
             }break;
         case 56:
             {
-                if(!ConfirmarHR(hr56))
-                    return;
+                ConfirmarHR(hr56);
+                camion = -1;
             }break;
         case 61:
             {
-                if(!ConfirmarHR(hr61))
-                    return;
+                ConfirmarHR(hr61);
+                camion = -1;
             }break;
         case 71:
             {
-                if(!ConfirmarHR(hr71))
-                    return;
-            }break;
+                ConfirmarHR(hr71);
+                camion = -1;            }break;
         case 72:
             {
-                if(!ConfirmarHR(hr72))
-                    return;
+                ConfirmarHR(hr72);
+                camion = -1;
             }break;
         case 73:
             {
-                if(!ConfirmarHR(hr73))
-                    return;
+                ConfirmarHR(hr73);
+                camion = -1;
             }break;
         case 0:
             {
@@ -294,73 +311,73 @@ void Menu::MenuDesconfirmar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40
         {
         case 23:
             {
-                if(!DesconfirmarHR(hr23))
-                    return;
+                DesconfirmarHR(hr23);
+                camion = -1;
             }break;
         case 25:
             {
-                if(!DesconfirmarHR(hr25))
-                    return;
+                DesconfirmarHR(hr25);
+                camion = -1;
             }break;
         case 40:
             {
-                if(!DesconfirmarHR(hr40))
-                    return;
+                DesconfirmarHR(hr40);
+                camion = -1;
             }break;
         case 41:
             {
-                if(!DesconfirmarHR(hr41))
-                    return;
+                DesconfirmarHR(hr41);
+                camion = -1;
             }break;
         case 43:
             {
-                if(!DesconfirmarHR(hr43))
-                    return;
+                DesconfirmarHR(hr43);
+                camion = -1;
             }break;
         case 47:
             {
-                if(!DesconfirmarHR(hr47))
-                    return;
+                DesconfirmarHR(hr47);
+                camion = -1;
             }break;
         case 51:
             {
-                if(!DesconfirmarHR(hr51))
-                    return;
+                DesconfirmarHR(hr51);
+                camion = -1;
             }break;
         case 52:
             {
-                if(!DesconfirmarHR(hr52))
-                    return;
+                DesconfirmarHR(hr52);
+                camion = -1;
             }break;
         case 55:
             {
-                if(!DesconfirmarHR(hr55))
-                    return;
+                DesconfirmarHR(hr55);
+                camion = -1;
             }break;
         case 56:
             {
-                if(!DesconfirmarHR(hr56))
-                    return;
+                DesconfirmarHR(hr56);
+                camion = -1;
             }break;
         case 61:
             {
-                if(!DesconfirmarHR(hr61))
-                    return;
+                DesconfirmarHR(hr61);
+                camion = -1;
             }break;
         case 71:
             {
-                if(!DesconfirmarHR(hr71))
-                    return;
+                DesconfirmarHR(hr71);
+                camion = -1;
             }break;
         case 72:
             {
-                if(!DesconfirmarHR(hr72))
-                    return;
+                DesconfirmarHR(hr72);
+                camion = -1;
             }break;
         case 73:
             {
-                if(!DesconfirmarHR(hr73))
-                    return;
+                DesconfirmarHR(hr73);
+                camion = -1;
             }break;
         case 0:
             {
@@ -431,72 +448,72 @@ void Menu::MenuActivar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoj
         case 23:
             {
                 ActivarHR(hr23);
-                return;
+                camion = -1;
             }break;
         case 25:
             {
                 ActivarHR(hr25);
-                    return;
+                camion = -1;
             }break;
         case 40:
             {
                 ActivarHR(hr40);
-                    return;
+                camion = -1;
             }break;
         case 41:
             {
                 ActivarHR(hr41);
-                    return;
+                camion = -1;
             }break;
         case 43:
             {
                 ActivarHR(hr43);
-                    return;
+                camion = -1;
             }break;
         case 47:
             {
                 ActivarHR(hr47);
-                    return;
+                camion = -1;
             }break;
         case 51:
             {
                 ActivarHR(hr51);
-                    return;
+                camion = -1;
             }break;
         case 52:
             {
                 ActivarHR(hr52);
-                    return;
+                camion = -1;
             }break;
         case 55:
             {
                 ActivarHR(hr55);
-                    return;
+                camion = -1;
             }break;
         case 56:
             {
                 ActivarHR(hr56);
-                    return;
+                camion = -1;
             }break;
         case 61:
             {
                 ActivarHR(hr61);
-                    return;
+                camion = -1;
             }break;
         case 71:
             {
                 ActivarHR(hr71);
-                    return;
+                camion = -1;
             }break;
         case 72:
             {
                 ActivarHR(hr72);
-                    return;
+                camion = -1;
             }break;
         case 73:
             {
                 ActivarHR(hr73);
-                    return;
+                camion = -1;
             }break;
         case 0:
             {
@@ -567,72 +584,72 @@ void Menu::MenuDesactivar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, 
         case 23:
             {
                 DesactivarHR(hr23);
-                    return;
+                camion = -1;
             }break;
         case 25:
             {
                 DesactivarHR(hr25);
-                    return;
+                camion = -1;
             }break;
         case 40:
             {
                 DesactivarHR(hr40);
-                    return;
+                camion = -1;
             }break;
         case 41:
             {
                 DesactivarHR(hr41);
-                    return;
+                camion = -1;
             }break;
         case 43:
             {
                 DesactivarHR(hr43);
-                    return;
+                camion = -1;
             }break;
         case 47:
             {
                 DesactivarHR(hr47);
-                    return;
+                camion = -1;
             }break;
         case 51:
             {
                 DesactivarHR(hr51);
-                    return;
+                camion = -1;
             }break;
         case 52:
             {
                 DesactivarHR(hr52);
-                    return;
+                camion = -1;
             }break;
         case 55:
             {
                 DesactivarHR(hr55);
-                    return;
+                camion = -1;
             }break;
         case 56:
             {
                 DesactivarHR(hr56);
-                    return;
+                camion = -1;
             }break;
         case 61:
             {
                 DesactivarHR(hr61);
-                    return;
+                camion = -1;
             }break;
         case 71:
             {
                 DesactivarHR(hr71);
-                    return;
+                camion = -1;
             }break;
         case 72:
             {
                 DesactivarHR(hr72);
-                    return;
+                camion = -1;
             }break;
         case 73:
             {
                 DesactivarHR(hr73);
-                    return;
+                camion = -1;
             }break;
         case 0:
             {
@@ -664,8 +681,6 @@ bool Menu::ConfirmarHR(HojaDeRuta &estaHR)
         return false;
     }
     estaHR.Confirmar();
-    cout<<"Camion "<<estaHR.GetNumero()<<" ha sido confirmado."<<endl;
-    cin.get();
     return true;
 }
 
@@ -685,8 +700,6 @@ bool Menu::DesconfirmarHR(HojaDeRuta &estaHR)
         return false;
     }
     estaHR.Desconfirmar();
-    cout<<"Camion "<<estaHR.GetNumero()<<" ha sido desconfirmado."<<endl;
-    cin.get();
     return true;
 }
 
@@ -707,7 +720,6 @@ void Menu::DesactivarHR(HojaDeRuta &estaHR)
     if(!estaHR.GetDesactivado())
     {
         estaHR.Desactivar();
-        cout<<"Camion "<<estaHR.GetNumero()<<" ha sido desactivado."<<endl;
         return;
     }
     cout<<"Camion "<<estaHR.GetNumero()<<" ya esta inactivo."<<endl;
@@ -726,6 +738,30 @@ void Menu::EscribirCamion(HojaDeRuta &estaHR)
     }
 }
 
+void Menu::EscribirCamionLista(HojaDeRuta &estaHR)
+{
+    if(!estaHR.GetDesactivado())
+    {
+        cout<<"| Camion "<<estaHR.GetNumero();
+        if(estaHR.GetConfirmado())
+        {
+            if(estaHR.GetMarcado())
+                cout<<" (Confirmado)       (Marcado)|"<<endl;
+            else
+                cout<<" (Confirmado)    (Desmarcado)|"<<endl;
+
+        }
+        else
+        {
+            if(estaHR.GetMarcado())
+                cout<<" (No confirmado)    (Marcado)|"<<endl;
+            else
+                cout<<" (No confirmado) (Desmarcado)|"<<endl;
+
+        }
+    }
+}
+
 void Menu::EscribirCamionActivar(HojaDeRuta &estaHR)
 {
     cout<<"|      Camion "<<estaHR.GetNumero();
@@ -733,6 +769,15 @@ void Menu::EscribirCamionActivar(HojaDeRuta &estaHR)
         cout<<"    (Desactivado)       |"<<endl;
     else
         cout<<"    (Activo)            |"<<endl;
+}
+
+void Menu::EscribirMarcado(HojaDeRuta &estaHR)
+{
+    cout<<"|      Camion "<<estaHR.GetNumero();
+    if(estaHR.GetMarcado())
+        cout<<"    (Marcado)           |"<<endl;
+    else
+        cout<<"    (Desmarcado)        |"<<endl;
 }
 
 void Menu::ActivarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
@@ -773,25 +818,222 @@ void Menu::DesconfirmarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40
     hr72.Desconfirmar();hr73.Desconfirmar();
 }
 
+void Menu::MarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
+                    HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
+                    HojaDeRuta &hr72, HojaDeRuta &hr73)
+{
+    hr23.Marcar();hr25.Marcar();hr40.Marcar();hr41.Marcar();
+    hr43.Marcar();hr47.Marcar();hr51.Marcar();hr52.Marcar();
+    hr55.Marcar();hr56.Marcar();hr61.Marcar();hr71.Marcar();
+    hr72.Marcar();hr73.Marcar();
+}
+
+void Menu::DesmarcarTodo(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
+                        HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
+                        HojaDeRuta &hr72, HojaDeRuta &hr73)
+{
+    hr23.Desmarcar();hr25.Desmarcar();hr40.Desmarcar();hr41.Desmarcar();
+    hr43.Desmarcar();hr47.Desmarcar();hr51.Desmarcar();hr52.Desmarcar();
+    hr55.Desmarcar();hr56.Desmarcar();hr61.Desmarcar();hr71.Desmarcar();
+    hr72.Desmarcar();hr73.Desmarcar();
+}
+
 void Menu::VerCamionesDisponibles(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
                             HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
                             HojaDeRuta &hr72, HojaDeRuta &hr73)
 {
-        DetallesGraficos d;
+    DetallesGraficos d;
+    d.limpiarConsola();
+    d.escribirSlow(" _______________________________________ ");
+    d.escribirSlow("|                                       |");
+    d.escribirSlow("|               Camiones                |");
+    d.escribirSlow("|_______________________________________|");
+    d.escribirSlow("|                                       |");
+    EscribirCamionLista(hr23);   EscribirCamionLista(hr25);
+    EscribirCamionLista(hr40);   EscribirCamionLista(hr41);
+    EscribirCamionLista(hr43);   EscribirCamionLista(hr47);
+    EscribirCamionLista(hr51);   EscribirCamionLista(hr52);
+    EscribirCamionLista(hr55);   EscribirCamionLista(hr56);
+    EscribirCamionLista(hr61);   EscribirCamionLista(hr71);
+    EscribirCamionLista(hr72);   EscribirCamionLista(hr73);
+    d.escribirSlow("|_______________________________________|");
+    cin.get();
+}
+
+void Menu::MenuMarcar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, HojaDeRuta &hr41, HojaDeRuta &hr43, HojaDeRuta &hr47,
+                            HojaDeRuta &hr51, HojaDeRuta &hr52, HojaDeRuta &hr55, HojaDeRuta &hr56, HojaDeRuta &hr61, HojaDeRuta &hr71,
+                            HojaDeRuta &hr72, HojaDeRuta &hr73)
+{
+    DetallesGraficos d;
+    Util u;
+    int camion = -1;
+    char camionChar[20];
+    while (camion == -1)
+    {
         d.limpiarConsola();
         d.escribirSlow(" _______________________________________ ");
         d.escribirSlow("|                                       |");
-        d.escribirSlow("|               Camiones                |");
+        d.escribirSlow("|          Marcar hoja de ruta          |");
         d.escribirSlow("|_______________________________________|");
         d.escribirSlow("|                                       |");
-        EscribirCamion(hr23);   EscribirCamion(hr25);
-        EscribirCamion(hr40);   EscribirCamion(hr41);
-        EscribirCamion(hr43);   EscribirCamion(hr47);
-        EscribirCamion(hr51);   EscribirCamion(hr52);
-        EscribirCamion(hr55);   EscribirCamion(hr56);
-        EscribirCamion(hr61);   EscribirCamion(hr71);
-        EscribirCamion(hr72);   EscribirCamion(hr73);
+        d.escribirSlow("|        Seleccione el camion:          |");
+        d.escribirSlow("|                                       |");
+            EscribirMarcado(hr23);   EscribirMarcado(hr25);
+            EscribirMarcado(hr40);   EscribirMarcado(hr41);
+            EscribirMarcado(hr43);   EscribirMarcado(hr47);
+            EscribirMarcado(hr51);   EscribirMarcado(hr52);
+            EscribirMarcado(hr55);   EscribirMarcado(hr56);
+            EscribirMarcado(hr61);   EscribirMarcado(hr71);
+            EscribirMarcado(hr72);   EscribirMarcado(hr73);
         d.escribirSlow("|_______________________________________|");
-        cin.get();
+        cout<<endl<<"Ingrese el numero de camion: ";
+        cin.getline(camionChar,20);
+        while (!u.IsNumeric(camionChar))
+        {
+            d.limpiarConsola();
+            d.escribirSlow(" _______________________________________ ");
+            d.escribirSlow("|                                       |");
+            d.escribirSlow("|          Marcar hoja de ruta          |");
+            d.escribirSlow("|_______________________________________|");
+            d.escribirSlow("|                                       |");
+            d.escribirSlow("|        Seleccione el camion:          |");
+            d.escribirSlow("|                                       |");
+                EscribirMarcado(hr23);   EscribirMarcado(hr25);
+                EscribirMarcado(hr40);   EscribirMarcado(hr41);
+                EscribirMarcado(hr43);   EscribirMarcado(hr47);
+                EscribirMarcado(hr51);   EscribirMarcado(hr52);
+                EscribirMarcado(hr55);   EscribirMarcado(hr56);
+                EscribirMarcado(hr61);   EscribirMarcado(hr71);
+                EscribirMarcado(hr72);   EscribirMarcado(hr73);
+            d.escribirSlow("|_______________________________________|");
+            cout<<endl<<"Camion no existente..."<<endl<<endl<<"Ingrese el numero de camion: ";
+            cin.getline(camionChar,20);
+        }
+        camion = u.ConvertToInt(camionChar);
+        d.limpiarConsola();
+        switch(camion)
+        {
+        case 23:
+            {
+                if(hr23.GetMarcado())
+                    hr23.Desmarcar();
+                else
+                    hr23.Marcar();
+                camion = -1;
+            }break;
+        case 25:
+            {
+                if(hr25.GetMarcado())
+                    hr25.Desmarcar();
+                else
+                    hr25.Marcar();
+                camion = -1;
+            }break;
+        case 40:
+            {
+                if(hr40.GetMarcado())
+                    hr40.Desmarcar();
+                else
+                    hr40.Marcar();
+                camion = -1;
+            }break;
+        case 41:
+            {
+                if(hr41.GetMarcado())
+                    hr41.Desmarcar();
+                else
+                    hr41.Marcar();
+                camion = -1;            }break;
+        case 43:
+            {
+                if(hr43.GetMarcado())
+                    hr43.Desmarcar();
+                else
+                    hr43.Marcar();
+                camion = -1;
+            }break;
+        case 47:
+            {
+                if(hr47.GetMarcado())
+                    hr47.Desmarcar();
+                else
+                    hr47.Marcar();
+                camion = -1;
+            }break;
+        case 51:
+            {
+                if(hr51.GetMarcado())
+                    hr51.Desmarcar();
+                else
+                    hr51.Marcar();
+                camion = -1;
+            }break;
+        case 52:
+            {
+                if(hr52.GetMarcado())
+                    hr52.Desmarcar();
+                else
+                    hr52.Marcar();
+                camion = -1;
+            }break;
+        case 55:
+            {
+                if(hr55.GetMarcado())
+                    hr55.Desmarcar();
+                else
+                    hr55.Marcar();
+                camion = -1;
+            }break;
+        case 56:
+            {
+                if(hr56.GetMarcado())
+                    hr56.Desmarcar();
+                else
+                    hr56.Marcar();
+                camion = -1;
+            }break;
+        case 61:
+            {
+                if(hr61.GetMarcado())
+                    hr61.Desmarcar();
+                else
+                    hr61.Marcar();
+                camion = -1;
+            }break;
+        case 71:
+            {
+                if(hr71.GetMarcado())
+                    hr71.Desmarcar();
+                else
+                    hr71.Marcar();
+                camion = -1;
+            }break;
+        case 72:
+            {
+                if(hr72.GetMarcado())
+                    hr72.Desmarcar();
+                else
+                    hr72.Marcar();
+                camion = -1;            }break;
+        case 73:
+            {
+                if(hr73.GetMarcado())
+                    hr73.Desmarcar();
+                else
+                    hr73.Marcar();
+                camion = -1;
+            }break;
+        case 0:
+            {
+                return;
+            }break;
+        default:
+            {
+                cout<<"Camion no existente..."<<endl;
+                camion = -1;
+                cin.get();
+            }break;
+        }
+    }
 }
 
