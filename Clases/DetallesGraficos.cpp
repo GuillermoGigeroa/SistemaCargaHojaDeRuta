@@ -66,7 +66,7 @@ void DetallesGraficos::presentacion(){
     _escribirSlow("                        BIENVENIDO AL");
     hacerEspacio();
     _escribirSlow(" SISTEMA DE REGISTROS DE CONFIRMACIONES - Guillermo Gigeroa");
-    Sleep(2300);
+    Sleep(1500);
     limpiarConsola();
 }
 
@@ -96,6 +96,6 @@ void DetallesGraficos::despedida(){
     _escribirSlow("                    GRACIAS POR UTILIZAR EL");
     hacerEspacio();
     _escribirSlow(" SISTEMA DE REGISTROS DE CONFIRMACIONES - Guillermo Gigeroa");
-    Sleep(2300);
+    Sleep(1500);
 }
 
