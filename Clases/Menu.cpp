@@ -678,7 +678,7 @@ void Menu::MenuConfirmar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
         cout<<"|                                       |"<<endl;
         cout<<"|        Seleccione el camion:          |"<<endl;
         cout<<"|                                       |"<<endl;
-            EscribirCamion(hr23);   EscribirCamion(hr25);
+            EscribirCamion(hr25);   EscribirCamion(hr23);
             EscribirCamion(hr40);   EscribirCamion(hr41);
             EscribirCamion(hr43);   EscribirCamion(hr47);
             EscribirCamion(hr51);   EscribirCamion(hr52);
@@ -698,7 +698,7 @@ void Menu::MenuConfirmar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
             cout<<"|                                       |"<<endl;
             cout<<"|        Seleccione el camion:          |"<<endl;
             cout<<"|                                       |"<<endl;
-                EscribirCamion(hr23);   EscribirCamion(hr25);
+                EscribirCamion(hr25);   EscribirCamion(hr23);
                 EscribirCamion(hr40);   EscribirCamion(hr41);
                 EscribirCamion(hr43);   EscribirCamion(hr47);
                 EscribirCamion(hr51);   EscribirCamion(hr52);
@@ -713,7 +713,7 @@ void Menu::MenuConfirmar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, H
         d.limpiarConsola();
         switch(camion)
         {
-        case 23:
+        case 39:
             {
                 if(hr23.GetConfirmado())
                     DesconfirmarHR(hr23);
@@ -856,7 +856,7 @@ void Menu::MenuActivar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoj
         cout<<"|                                       |"<<endl;
         cout<<"|        Seleccione el camion:          |"<<endl;
         cout<<"|                                       |"<<endl;
-            EscribirCamionActivar(hr23);   EscribirCamionActivar(hr25);
+            EscribirCamionActivar(hr25);   EscribirCamionActivar(hr23);
             EscribirCamionActivar(hr40);   EscribirCamionActivar(hr41);
             EscribirCamionActivar(hr43);   EscribirCamionActivar(hr47);
             EscribirCamionActivar(hr51);   EscribirCamionActivar(hr52);
@@ -876,7 +876,7 @@ void Menu::MenuActivar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoj
             cout<<"|                                       |"<<endl;
             cout<<"|        Seleccione el camion:          |"<<endl;
             cout<<"|                                       |"<<endl;
-                EscribirCamionActivar(hr23);   EscribirCamionActivar(hr25);
+                EscribirCamionActivar(hr25);   EscribirCamionActivar(hr23);
                 EscribirCamionActivar(hr40);   EscribirCamionActivar(hr41);
                 EscribirCamionActivar(hr43);   EscribirCamionActivar(hr47);
                 EscribirCamionActivar(hr51);   EscribirCamionActivar(hr52);
@@ -891,7 +891,7 @@ void Menu::MenuActivar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoj
         d.limpiarConsola();
         switch(camion)
         {
-        case 23:
+        case 39:
             {
                 if(!hr23.GetDesactivado())
                     DesactivarHR(hr23);
@@ -1216,7 +1216,7 @@ void Menu::VerCamionesDisponibles(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta
     cout<<"|               Camiones                |"<<endl;
     cout<<"|_______________________________________|"<<endl;
     cout<<"|                                       |"<<endl;
-    EscribirCamionLista(hr23);   EscribirCamionLista(hr25);
+    EscribirCamionLista(hr25);   EscribirCamionLista(hr23);
     EscribirCamionLista(hr40);   EscribirCamionLista(hr41);
     EscribirCamionLista(hr43);   EscribirCamionLista(hr47);
     EscribirCamionLista(hr51);   EscribirCamionLista(hr52);
@@ -1245,7 +1245,7 @@ void Menu::MenuMarcar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoja
         cout<<"|                                       |"<<endl;
         cout<<"|        Seleccione el camion:          |"<<endl;
         cout<<"|                                       |"<<endl;
-            EscribirMarcado(hr23);   EscribirMarcado(hr25);
+            EscribirMarcado(hr25);   EscribirMarcado(hr23);
             EscribirMarcado(hr40);   EscribirMarcado(hr41);
             EscribirMarcado(hr43);   EscribirMarcado(hr47);
             EscribirMarcado(hr51);   EscribirMarcado(hr52);
@@ -1265,7 +1265,7 @@ void Menu::MenuMarcar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoja
             cout<<"|                                       |"<<endl;
             cout<<"|        Seleccione el camion:          |"<<endl;
             cout<<"|                                       |"<<endl;
-                EscribirMarcado(hr23);   EscribirMarcado(hr25);
+                EscribirMarcado(hr25);   EscribirMarcado(hr23);
                 EscribirMarcado(hr40);   EscribirMarcado(hr41);
                 EscribirMarcado(hr43);   EscribirMarcado(hr47);
                 EscribirMarcado(hr51);   EscribirMarcado(hr52);
@@ -1280,7 +1280,7 @@ void Menu::MenuMarcar(HojaDeRuta &hr23, HojaDeRuta &hr25, HojaDeRuta &hr40, Hoja
         d.limpiarConsola();
         switch(camion)
         {
-        case 23:
+        case 39:
             {
                 if(hr23.GetMarcado())
                     hr23.Desmarcar();

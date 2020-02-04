@@ -11,7 +11,7 @@ int main()
     Menu menu;
     DetallesGraficos d;
     SistemaPersistencia p;
-    HojaDeRuta hr23(23), hr25(25), hr40(40), hr41(41), hr43(43), hr47(47), hr51(51);
+    HojaDeRuta hr23(39), hr25(25), hr40(40), hr41(41), hr43(43), hr47(47), hr51(51);
     HojaDeRuta hr52(52), hr55(55), hr56(56), hr61(61), hr71(71), hr72(72), hr73(73);
     d.acomodarConsola();
     d.presentacion();
